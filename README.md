@@ -1,6 +1,11 @@
 # Verbal Complexity of Popular Song Lyrics
 UCSD ECE 143 Course Project Group 1
-Members: Jordan Field, Wansen Zhang, Yuekuan Luo, Daniel Shak
+
+### Members: 
+- Jordan Field 
+- Wansen Zhang
+- Yuekuan Luo
+- Daniel Shak
 
 This GitHub repository contains code and data files for the end-term project of ECE 143 at UC San Diego. The project in question was designed in order to analyze the verbal complexity of popular song lyrics, as recorded by the Billboard Top 100 lists. 
 
@@ -53,7 +58,7 @@ with open('Songs','rb') as f:
     songs = pickle.load(f)
 ```
 
-Once loaded, you will have a list of dictionaries. Each dictionary has several keys. The most important is 'Week', which gives a timestamp for the song rankings associated with that week. This is the same way that the Billboard site organizes the rankings. From there, you have keys from '1' to '100', which return a list of the song and artist name associated with the ranking of the key ([Song Name, Artist Name]).
+Once loaded, you will have a list of dictionaries. Each dictionary has several keys. The most important is 'Week', which gives a timestamp for the song rankings associated with that week. This is the same way that the Billboard site organizes the rankings. From there, you have keys from '1' to '100', which return a list of the song and artist name associated with the ranking of the key ```([Song Name, Artist Name])```.
 
 For example:
 ```songs[0]``` will return:
@@ -70,7 +75,39 @@ For example:
 When the provided 'Songs' file in this GitHub Repository was created, the ```billboard_scraping.py``` script was run in order to obtain all Top 100 lists until the current list, which was ```May 11, 2019```. If you were to run the script for yourself, it would get all of the lists until whatever the current list is (hello future person!)
 
 ### 'Lyrics':
-
 'Lyrics' is the file in which the lyrics of the songs are stored, and associated with the song and artist names. Like 'Songs', it is a pickled Python variable that should be loaded in the same way.
 
 Once loaded, it will be a dictionary. The keys of the dictionary are tuples with the following structure: ```(Song Name, Artist Name)```
+The values for each of these keys are lists of the following structure: ```['Song Name, Artist Name', 'Lyrics', [Strings within parentheses], [Strings within brackets]]```. For example:
+
+```sh
+lyric_dict[('Poor Little Fool', 'Ricky Nelson')]
+```
+will output:
+```sh
+['Poor Little Fool, Ricky Nelson',
+ "\n\nI used to play around with hearts\nThat hastened at my call\nBut when I met that little girl\nI knew that I would fall\n\nPoor little fool, oh yeah\nI was a fool, uh huh\n\n\n\nShe played around and teased me\nWith her carefree devil eyes\nShe'd hold me close and kiss me\nBut her heart was full of lies\n\nPoor little fool, oh yeah\nI was a fool, uh huh\n\n\n\nShe told me how she cared for me\nAnd that we'd never part\nAnd so for the very first time\nI gave away my heart\n\nPoor little fool, oh yeah\nI was a fool, uh huh\n\n\n\nThe next day she was gone\nAnd I knew she'd lied to me\nShe left me with a broken heart\nAnd won her victory\n\nPoor little fool, oh yeah\nI was a fool, uh huh\n\n\n\nWell, I'd played this game with other hearts\nBut I never thought I'd see\nThe day that someone else would play\nLove's foolish game with me\n\nPoor little fool, oh yeah\nI was a fool, uh huh\n\n\n\nPoor little fool, oh yeah\nI was a fool, uh huh\n\n\n\n",
+ ['Oh oh, poor little fool',
+  'I was a fool, oh yeah',
+  'Oh oh, poor little fool',
+  'I was a fool, oh yeah',
+  'Oh oh, poor little fool',
+  'I was a fool, oh yeah',
+  'Oh oh, poor little fool',
+  'I was a fool, oh yeah',
+  'Oh oh, poor little fool',
+  'I was a fool, oh yeah',
+  'Oh oh, poor little fool',
+  'Poor little fool'],
+ []]
+ ```
+ 
+In this case, there were no strings within brackets, but some genius lyrics include them, mostly as section headers (i.e. [Verse 1]). The parentheticals and bracketed strings were separated and mostly ignored in our own analysis, but they can be included if desired. 
+
+### 'exist'
+'exist' is also a pickled Python variable with a simple structure once loaded. It is a list of lists, where each sublist is also a pair of: ```[Song Name, Artist Name]```. This variable was mostly used for the purpose of constructing 'Lyrics', but we include it for your information.
+
+### 'fail' and 'fail_log.txt'
+'fail' has the same structure as 'exist', only now it is a record of the songs whose lyrics could not be found on genius.com through our search methods. If desired, you could look for the lyrics elsewhere, but our method gathers about 84% of the songs successfully as is. 
+
+'fail_log.txt' has the same information as 'fail', but is provided for ease of viewing. 
