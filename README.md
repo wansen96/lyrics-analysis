@@ -21,6 +21,18 @@ There are several 3rd-party packages used throughout the project, which are list
 - wordcloud
 - matplotlib
 
+# Structure of the Github Repo
+There is only one folder besides the main directory, which is called 'Figs' and contains all of the figures that were used in our class presentation. 
+
+Otherwise, the following files will be present in the main directory:
+
+1. ```Songs```: a pickled Python file which is part of the dataset (more later)
+2. ```Lyrics```: another pickled Python file which is part of the data
+3. ```billboard_scraping.py```: a Python script which was used to collect the data in ```Songs```.
+4. ```lyrics_scrp.py```: a Python script which was used to collect the data in ```Lyrics```, along with some other files.
+5. ```lyrics_functions.py```: a module containing all of the functions that we have created in order to analyze the data. The usage of these will be explained more later.
+6. ```notebook.ipynb```: a Jupyter Notebook which contains example usages of the data and functions, along with some useful data visualizations
+
 # Collecting the Data
 There are 2 primary tasks involved in collecting our dataset:
 
@@ -42,10 +54,10 @@ python lyrics_scrp.py
 
 This script uses web scraping alongside the API provided by genius.com in order to obtain the lyrics for the songs whose names and artists were gathered earlier. This script will save 4 files to your directory:
 
-1. 'Lyrics': The primary data structure containing the lyrics
-2. 'exist': A list of the songs that have been seen in the billboard lists. This prevents duplicate lyrics
-3. 'fail': A list of the songs whose lyrics could not be obtained.
-4. 'fail_log.txt': A text version of 'fail', for easier reading
+1. ```Lyrics```: The primary data structure containing the lyrics
+2. ```exist```: A list of the songs that have been seen in the billboard lists. This prevents duplicate lyrics
+3. ```fail```: A list of the songs whose lyrics could not be obtained.
+4. ```fail_log.txt```: A text version of 'fail', for easier reading
 
 The first 3 files above were similarly saved using the ```pickle``` module. 
 
@@ -105,9 +117,22 @@ will output:
 In this case, there were no strings within brackets, but some genius lyrics include them, mostly as section headers (i.e. [Verse 1]). The parentheticals and bracketed strings were separated and mostly ignored in our own analysis, but they can be included if desired. 
 
 ### 'exist'
-'exist' is also a pickled Python variable with a simple structure once loaded. It is a list of lists, where each sublist is also a pair of: ```[Song Name, Artist Name]```. This variable was mostly used for the purpose of constructing 'Lyrics', but we include it for your information.
+```exist``` is also a pickled Python variable with a simple structure once loaded. It is a list of lists, where each sublist is also a pair of: ```[Song Name, Artist Name]```. This variable was mostly used for the purpose of constructing ```Lyrics```, but we include it for your information.
 
 ### 'fail' and 'fail_log.txt'
-'fail' has the same structure as 'exist', only now it is a record of the songs whose lyrics could not be found on genius.com through our search methods. If desired, you could look for the lyrics elsewhere, but our method gathers about 84% of the songs successfully as is. 
+```fail``` has the same structure as ```exist```, only now it is a record of the songs whose lyrics could not be found on genius.com through our search methods. If desired, you could look for the lyrics elsewhere, but our method gathers about 84% of the songs successfully as is. 
 
-'fail_log.txt' has the same information as 'fail', but is provided for ease of viewing. 
+```fail_log.txt``` has the same information as ```fail```, but is provided for ease of viewing. 
+
+It should be noted that the majority of the analysis will be done using ```Songs``` and ```Lyrics```. 
+
+# How to Use Data and Analysis Functions
+### Daniel, fill in this section. 
+Talk about the functions and the general workflow, probably don't need to be super specific, we have docstrings.
+
+# Example Usage and Data Visualization
+Provided within this Repository is a Jupyter Notebook file called ```notebook_final.ipynb``` which will contain several instances of example usage of our analysis functions as well as some key visualizations for our presentation and conclusions. 
+
+The notebook itself is well-documented, and should serve on its own without much further comment, but it is highly recommended that you look through the notebook, as it has many useful examples of how to use the data and functions. 
+
+Note: Any created figures will be saved to a sub-directory called 'Figs' but you must have all of the other files within the working directory of the Jupyter Notebook for it to work properly. 
