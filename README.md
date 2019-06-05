@@ -128,8 +128,48 @@ In this case, there were no strings within brackets, but some genius lyrics incl
 It should be noted that the majority of the analysis will be done using ```Songs``` and ```Lyrics```. 
 
 # How to Use Data and Analysis Functions
-### Daniel, fill in this section. 
-Talk about the functions and the general workflow, probably don't need to be super specific, we have docstrings.
+The ```lyrics_functions.py``` is a mini API containing numerous functions to analyze the song/lyric information. ```lyrics_functions.py``` deals with the outputted data structures from the files of ```billboard_scraping.py``` and ```lyrics_scrp.py```. This consists of the Songs and Lyrics files as described above. The functions included and their usage are briefly described below, and a more detailed description is found in the file itself.
+
+#### Binning function
+
+* ```to_timeframe(song_list,lyric_dict,timeframe='year')``` <br>
+This is the main function that is run to group data into specific time frames of interest. These time frames include week, month, year and decade. This output is what goes into "binned" for the rest of the functions below.
+    
+#### Analytic functions
+
+The remaining functions analyze the data for each specific time period and return/append to a ```pandas.DataFrame```. There are three methods of passing data into all of these functions. This is described as follows.<br>
+* ```<function>(binned = binned_data)``` <br>
+    * Pass in output data from the function ```to_timeframe``` and returns a ```pandas.DataFrame``` <br>
+* ```<function>(binned=binned_data,dataframe=exisiting_df)``` <br>
+    * Pass in output data from the function ```to_timeframe``` and an existing ```pandas.DataFrame``` from the same time frame output from one of the functions, will append to the existing ```pandas.DataFrame``` <br>
+* ```<function>(raw_data=[songs,lyric_dict,'week'])``` <br>
+    * Pass in the raw songs and lyrics data structure as well as the time frame. The function will call ```to_timeframe(song_list,lyric_dict,timeframe='year')``` from within <br>
+
+##### Analytic function signatures
+
+* ```count_newlines(binned=None,dataframe=None,raw_data=None)```
+
+* ```count_brackets(binned=None,dataframe=None,raw_data=None)```
+
+* ```count_parens(binned=None,dataframe=None,raw_data=None)```
+
+* ```count_punctuation(binned=None,dataframe=None,raw_data=None)```
+
+* ```avg_wrd_len(binned=None,dataframe=None,raw_data=None,unique=True)```
+
+* ```median_wrd_len(binned=None,dataframe=None,raw_data=None,unique=True)```
+
+* ```num_unique_words(binned=None,dataframe=None,raw_data=None)```
+
+* ```variance_words(binned=None,dataframe=None,raw_data=None,unique=True)```
+
+* ```sort_word_len(num_words=10,binned=None,dataframe=None,raw_data=None,track_words=None,omit_words=["i", "and","she","he","that","this","a","they","you"])```
+
+* ```num_song_repeats(num_songs=10,binned=None,dataframe=None,raw_data=None)```
+
+* ```avg_title_len(binned=None,dataframe=None,raw_data=None)```
+
+* ```avg_artist_len(binned=None,dataframe=None,raw_data=None)```
 
 # Example Usage and Data Visualization
 Provided within this Repository is a Jupyter Notebook file called ```notebook.ipynb``` which will contain several instances of example usage of our analysis functions as well as some key visualizations for our presentation and conclusions. 
