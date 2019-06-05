@@ -26,12 +26,13 @@ There is only one folder besides the main directory, which is called 'Figs' and 
 
 Otherwise, the following files will be present in the main directory:
 
-1. ```Songs```: a pickled Python file which is part of the dataset (more later)
-2. ```Lyrics```: another pickled Python file which is part of the data
+1. ```Songs```: a pickled Python file which is part of the dataset (more later).
+2. ```Lyrics```: another pickled Python file which is part of the data.
 3. ```billboard_scraping.py```: a Python script which was used to collect the data in ```Songs```.
 4. ```lyrics_scrp.py```: a Python script which was used to collect the data in ```Lyrics```, along with some other files.
 5. ```lyrics_functions.py```: a module containing all of the functions that we have created in order to analyze the data. The usage of these will be explained more later.
-6. ```notebook.ipynb```: a Jupyter Notebook which contains example usages of the data and functions, along with some useful data visualizations
+6. ```notebook.ipynb```: a Jupyter Notebook which contains example usages of the data and functions, along with some useful data visualizations.
+7. ```Presentation.pdf```: a .pdf file containing presentation slides for the project.
 
 # Collecting the Data
 There are 2 primary tasks involved in collecting our dataset:
@@ -44,7 +45,7 @@ In order to achieve the first step, the ```billboard_scraping.py``` script must 
 ```sh
 python billboard_scraping.py
 ```
-This script will retrieve data from the Billboard Top 100 lists on billboard.com and save the data using the ```pickle``` module to your current directory under the name 'Songs'
+This script will retrieve data from the Billboard Top 100 lists on billboard.com and save the data using the ```pickle``` module to your current directory under the name 'Songs'.
 
 In order to achieve the second step, the ```lyrics_scrp.py``` script will also be used in the command line, as follows:
 
