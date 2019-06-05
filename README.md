@@ -132,7 +132,7 @@ It should be noted that the majority of the analysis will be done using ```Songs
 Talk about the functions and the general workflow, probably don't need to be super specific, we have docstrings.
 
 # Example Usage and Data Visualization
-Provided within this Repository is a Jupyter Notebook file called ```notebook_final.ipynb``` which will contain several instances of example usage of our analysis functions as well as some key visualizations for our presentation and conclusions. 
+Provided within this Repository is a Jupyter Notebook file called ```notebook.ipynb``` which will contain several instances of example usage of our analysis functions as well as some key visualizations for our presentation and conclusions. 
 
 The notebook itself is well-documented, and should serve on its own without much further comment, but it is highly recommended that you look through the notebook, as it has many useful examples of how to use the data and functions. 
 
