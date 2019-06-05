@@ -1,5 +1,5 @@
 # Verbal Complexity of Popular Song Lyrics
-UCSD ECE 143 Course Project Group 1
+UC San Diego, ECE 143 Course Project, Group 1
 
 ### Members: 
 - Jordan Field 
