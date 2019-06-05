@@ -62,6 +62,8 @@ This script uses web scraping alongside the API provided by genius.com in order 
 
 The first 3 files above were similarly saved using the ```pickle``` module. 
 
+NOTE: You will need to get your own genius.com API token to use this script, as we did not want to provide ours publicly. The script will tell you where to input it. 
+
 # Data Structure
 ### 'Songs':
 'Songs' is the file in which the artist and song names are stored for the Billboard Top 100 lists. Specifically, 'Songs' is a pickled Python variable that should be loaded into your working directory like the following:
