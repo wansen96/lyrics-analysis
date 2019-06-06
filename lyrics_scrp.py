@@ -111,7 +111,7 @@ def load_files(fname):
              fail: List of Failed Songs
              data: Billboard Weekly Top 100, data scrapped from billboard_scrapping
     """
-    data = pickle.load(open('data_final',"rb"))
+    data = pickle.load(open('Songs',"rb"))
     total_week = len(data)
     print('total weeks',total_week)
     try:
