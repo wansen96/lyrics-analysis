@@ -265,7 +265,7 @@ if __name__ == "__main__":
 
     # Convert Lyrics Set into dictionary
     Lyrics = lyrics_to_dict(Lyrics_Set)
-    with open(fname, 'wb') as f:
+    with open('Lyrics_Dict', 'wb') as f:
         pickle.dump(Lyrics, f)
     print('lyrics scraping finished')
 
