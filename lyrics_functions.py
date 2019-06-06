@@ -14,7 +14,8 @@ Workflow follows as:
 
 def to_timeframe(song_list,lyric_dict,timeframe='year'):
     '''
-    gathers all information for specific timeframes (week, month, year, decade)
+    Gathers all information for specific timeframes (week, month, year, decade). The information includes 
+    ['num_songs',titles_authors','lyrics','words','parens','bracketed'] per time period.
     
     Input:
         song_list - the list of dictionaries loaded from the unpickled file data_final, further description below of this format
@@ -88,6 +89,8 @@ def to_timeframe(song_list,lyric_dict,timeframe='year'):
     
 def count_newlines(binned=None,dataframe=None,raw_data=None):
     '''
+    Counts the number of new line characters in the lyrics per time period.
+
     3 input methods
     1. only binned data, function will create the associated dataframe
     2. binned data and matching dataframe, function will append to dataframe
@@ -138,6 +141,8 @@ def count_newlines(binned=None,dataframe=None,raw_data=None):
 
 def count_brackets(binned=None,dataframe=None,raw_data=None):
     '''
+    Counts the number of bracketed sections in the lyrics per time period.
+
     3 input methods
     1. only binned data, function will create the associated dataframe
     2. binned data and matching dataframe, function will append to dataframe
@@ -188,6 +193,8 @@ def count_brackets(binned=None,dataframe=None,raw_data=None):
 
 def count_parens(binned=None,dataframe=None,raw_data=None):
     '''
+    Counts the number of parentheticals in the lyrics per time period.
+
     3 input methods
     1. only binned data, function will create the associated dataframe
     2. binned data and matching dataframe, function will append to dataframe
@@ -238,6 +245,8 @@ def count_parens(binned=None,dataframe=None,raw_data=None):
 
 def count_punctuation(binned=None,dataframe=None,raw_data=None):
     '''
+    Counts the number of characters which are considered punctuation characters in the C locale in the lyrics per time period.
+
     3 input methods
     1. only binned data, function will create the associated dataframe
     2. binned data and matching dataframe, function will append to dataframe
@@ -298,6 +307,8 @@ def count_punctuation(binned=None,dataframe=None,raw_data=None):
 
 def avg_wrd_len(binned=None,dataframe=None,raw_data=None,unique=True):
     '''
+    Returns the average word length when considering all the lyrics per time period. Calculation can be done when including either unique or nonunique words.
+
     3 input methods
     1. only binned data, function will create the associated dataframe
     2. binned data and matching dataframe, function will append to dataframe
@@ -358,6 +369,8 @@ def avg_wrd_len(binned=None,dataframe=None,raw_data=None,unique=True):
 
 def median_wrd_len(binned=None,dataframe=None,raw_data=None,unique=True):
     '''
+    Returns the median word length when considering all the lyrics per time period. Calculation can be done when including either unique or nonunique words.
+
     3 input methods
     1. only binned data, function will create the associated dataframe
     2. binned data and matching dataframe, function will append to dataframe
@@ -418,6 +431,8 @@ def median_wrd_len(binned=None,dataframe=None,raw_data=None,unique=True):
     
 def num_unique_words(binned=None,dataframe=None,raw_data=None):
     '''
+    Returns the number of unique words when considering all the lyrics per time period.
+
     3 input methods
     1. only binned data, function will create the associated dataframe
     2. binned data and matching dataframe, function will append to dataframe
@@ -471,6 +486,8 @@ def num_unique_words(binned=None,dataframe=None,raw_data=None):
 
 def variance_words(binned=None,dataframe=None,raw_data=None,unique=True):
     '''
+    Returns the variance of the word length when considering all the lyrics per time period. Calculation can be done when including either unique or nonunique words.
+
     3 input methods
     1. only binned data, function will create the associated dataframe
     2. binned data and matching dataframe, function will append to dataframe
@@ -530,6 +547,8 @@ def variance_words(binned=None,dataframe=None,raw_data=None,unique=True):
     
 def sort_word_len(num_words=10,binned=None,dataframe=None,raw_data=None,track_words=None,omit_words=["i", "and","she","he","that","this","a","they","you"]):
     '''
+    Finds the top num_words words with the most occurrences in a time period. Specific words can be tracked or omitted when doing the search.
+
     3 input methods
     1. only binned data, function will create the associated dataframe
     2. binned data and matching dataframe, function will append to dataframe
@@ -605,6 +624,8 @@ def sort_word_len(num_words=10,binned=None,dataframe=None,raw_data=None,track_wo
 
 def num_song_repeats(num_songs=10,binned=None,dataframe=None,raw_data=None):
     '''
+    Finds the top num_songs most repeated songs of the time period.
+
     3 input methods
     1. only binned data, function will create the associated dataframe
     2. binned data and matching dataframe, function will append to dataframe
@@ -662,6 +683,8 @@ def num_song_repeats(num_songs=10,binned=None,dataframe=None,raw_data=None):
 
 def avg_title_len(binned=None,dataframe=None,raw_data=None):
     '''
+    Calculates the average length of all the song titles in a time period.
+
     3 input methods
     1. only binned data, function will create the associated dataframe
     2. binned data and matching dataframe, function will append to dataframe
@@ -716,6 +739,8 @@ def avg_title_len(binned=None,dataframe=None,raw_data=None):
 
 def avg_artist_len(binned=None,dataframe=None,raw_data=None):
     '''
+    Calculates the average artist name length for all the songs in a time period.
+    
     3 input methods
     1. only binned data, function will create the associated dataframe
     2. binned data and matching dataframe, function will append to dataframe
