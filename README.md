@@ -150,28 +150,39 @@ The remaining functions analyze the data for each specific time period and retur
 ##### Analytic function signatures
 
 * ```count_newlines(binned=None,dataframe=None,raw_data=None)```
+    * Counts the number of new line characters in the lyrics per time period.
 
 * ```count_brackets(binned=None,dataframe=None,raw_data=None)```
-
+    * Counts the number of bracketed sections in the lyrics per time period.
+    
 * ```count_parens(binned=None,dataframe=None,raw_data=None)```
-
+    * Counts the number of parentheticals in the lyrics per time period.
+    
 * ```count_punctuation(binned=None,dataframe=None,raw_data=None)```
-
+    * Counts the number of characters which are considered punctuation characters in the C locale in the lyrics per time period.
 * ```avg_wrd_len(binned=None,dataframe=None,raw_data=None,unique=True)```
-
+    * Returns the average word length when considering all the lyrics per time period.
+    
 * ```median_wrd_len(binned=None,dataframe=None,raw_data=None,unique=True)```
-
+    * Returns the median word length when considering all the lyrics per time period.
+    
 * ```num_unique_words(binned=None,dataframe=None,raw_data=None)```
+    * Returns the number of unique words when considering all the lyrics per time period.
 
 * ```variance_words(binned=None,dataframe=None,raw_data=None,unique=True)```
+    * Returns the variance of the word length when considering all the lyrics per time period.
 
 * ```sort_word_len(num_words=10,binned=None,dataframe=None,raw_data=None,track_words=None,omit_words=["i", "and","she","he","that","this","a","they","you"])```
+    * Finds the top ```num_words``` words with the most occurrences in a time period.
 
 * ```num_song_repeats(num_songs=10,binned=None,dataframe=None,raw_data=None)```
+    * Finds the top ```num_songs``` most repeated songs of the time period.
 
 * ```avg_title_len(binned=None,dataframe=None,raw_data=None)```
+    * Calculates the average length of all the song titles in a time period.
 
 * ```avg_artist_len(binned=None,dataframe=None,raw_data=None)```
+    * Calculates the average artist name length for all the songs in a time period.
 
 # Example Usage and Data Visualization
 Provided within this Repository is a Jupyter Notebook file called ```notebook.ipynb``` which will contain several instances of example usage of our analysis functions as well as some key visualizations for our presentation and conclusions. 
