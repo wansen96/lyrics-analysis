@@ -53,7 +53,7 @@ In order to achieve the second step, the ```lyrics_scrp.py``` script will also b
 python lyrics_scrp.py
 ```
 
-This script uses web scraping alongside the API provided by genius.com in order to obtain the lyrics for the songs whose names and artists were gathered earlier. This script will save 4 files to your directory:
+This script uses web scraping alongside the API provided by genius.com in order to obtain the lyrics for the songs whose names and artists were gathered earlier. This script will save 5 files to your directory:
 
 1. ```Lyrics_Dict```: The primary data structure containing the lyrics
 2. ```exist```: A list of the songs that have been seen in the billboard lists. This prevents duplicate lyrics
