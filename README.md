@@ -27,7 +27,7 @@ There is only one folder besides the main directory, which is called 'Figs' and 
 Otherwise, the following files will be present in the main directory:
 
 1. ```Songs```: a pickled Python file which is part of the dataset (more later).
-2. ```Lyrics```: another pickled Python file which is part of the data.
+2. ```Lyrics_Dict```: another pickled Python file which is part of the data.
 3. ```billboard_scraping.py```: a Python script which was used to collect the data in ```Songs```.
 4. ```lyrics_scrp.py```: a Python script which was used to collect the data in ```Lyrics```, along with some other files.
 5. ```lyrics_functions.py```: a module containing all of the functions that we have created in order to analyze the data. The usage of these will be explained more later.
@@ -55,14 +55,13 @@ python lyrics_scrp.py
 
 This script uses web scraping alongside the API provided by genius.com in order to obtain the lyrics for the songs whose names and artists were gathered earlier. This script will save 4 files to your directory:
 
-1. ```Lyrics```: The primary data structure containing the lyrics
+1. ```Lyrics_Dict```: The primary data structure containing the lyrics
 2. ```exist```: A list of the songs that have been seen in the billboard lists. This prevents duplicate lyrics
-3. ```fail```: A list of the songs whose lyrics could not be obtained.
+3. ```fail```: A list of the songs whose lyrics could not be obtained
 4. ```fail_log.txt```: A text version of 'fail', for easier reading
+5. ```Lyrics```: An alternate structure of ```Lyrics_Dict``` with the same data
 
 The first 3 files above were similarly saved using the ```pickle``` module. 
-
-NOTE: You will need to get your own genius.com API token to use this script, as we did not want to provide ours publicly. The script will tell you where to input it. 
 
 # Data Structure
 ### 'Songs':
