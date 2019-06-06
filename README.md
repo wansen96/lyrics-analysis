@@ -88,8 +88,8 @@ For example:
 
 When the provided 'Songs' file in this GitHub Repository was created, the ```billboard_scraping.py``` script was run in order to obtain all Top 100 lists until the current list, which was ```May 11, 2019```. If you were to run the script for yourself, it would get all of the lists until whatever the current list is (hello future person!)
 
-### 'Lyrics':
-'Lyrics' is the file in which the lyrics of the songs are stored, and associated with the song and artist names. Like 'Songs', it is a pickled Python variable that should be loaded in the same way.
+### 'Lyrics_Dict' and 'Lyrics':
+```Lyrics_Dict``` is the file in which the lyrics of the songs are stored, and associated with the song and artist names. Like 'Songs', it is a pickled Python variable that should be loaded in the same way.
 
 Once loaded, it will be a dictionary. The keys of the dictionary are tuples with the following structure: ```(Song Name, Artist Name)```
 The values for each of these keys are lists of the following structure: ```['Song Name, Artist Name', 'Lyrics', [Strings within parentheses], [Strings within brackets]]```. For example:
@@ -118,18 +118,20 @@ will output:
  
 In this case, there were no strings within brackets, but some genius lyrics include them, mostly as section headers (i.e. [Verse 1]). The parentheticals and bracketed strings were separated and mostly ignored in our own analysis, but they can be included if desired. 
 
+Note: ```Lyrics``` has the same content of ```Lyrics_Dict``` but in a different structure. It wasn't used in the project directly, so is only included as an extra file. 
+
 ### 'exist'
-```exist``` is also a pickled Python variable with a simple structure once loaded. It is a list of lists, where each sublist is also a pair of: ```[Song Name, Artist Name]```. This variable was mostly used for the purpose of constructing ```Lyrics```, but we include it for your information.
+```exist``` is also a pickled Python variable with a simple structure once loaded. It is a list of lists, where each sublist is also a pair of: ```[Song Name, Artist Name]```. This variable was mostly used for the purpose of constructing ```Lyrics_Dict```, but we include it for your information.
 
 ### 'fail' and 'fail_log.txt'
 ```fail``` has the same structure as ```exist```, only now it is a record of the songs whose lyrics could not be found on genius.com through our search methods. If desired, you could look for the lyrics elsewhere, but our method gathers about 84% of the songs successfully as is. 
 
 ```fail_log.txt``` has the same information as ```fail```, but is provided for ease of viewing. 
 
-It should be noted that the majority of the analysis will be done using ```Songs``` and ```Lyrics```. 
+It should be noted that the majority of the analysis will be done using ```Songs``` and ```Lyrics_Dict```. 
 
 # How to Use Data and Analysis Functions
-The ```lyrics_functions.py``` is a mini API containing numerous functions to analyze the song/lyric information. ```lyrics_functions.py``` deals with the outputted data structures from the files of ```billboard_scraping.py``` and ```lyrics_scrp.py```. This consists of the Songs and Lyrics files as described above. The functions included and their usage are briefly described below, and a more detailed description is found in the file itself.
+The ```lyrics_functions.py``` is a mini API containing numerous functions to analyze the song/lyric information. ```lyrics_functions.py``` deals with the outputted data structures from the files of ```billboard_scraping.py``` and ```lyrics_scrp.py```. This consists of the ```Songs``` and ```Lyrics_Dict``` files as described above. The functions included and their usage are briefly described below, and a more detailed description is found in the file itself.
 
 #### Binning function
 
