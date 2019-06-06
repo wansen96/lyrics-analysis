@@ -103,9 +103,8 @@ def lyrics_from_song_api_path(song_api_path):
     return lyrics
 
 
-def load_files(fname):
+def load_files():
     """
-    :param fname: file name of Lyrics
     :return: Lyrics_Set: List of [Song, Artist, Lyrics]
              exist: List of Exist Songs
              fail: List of Failed Songs
@@ -122,7 +121,7 @@ def load_files(fname):
         exist.append(0)
 
     try:
-        Lyrics_Set = pickle.load(open(fname,"rb"))
+        Lyrics_Set = pickle.load(open('Lyrics',"rb"))
     except:
         Lyrics_Set = []
 
@@ -134,15 +133,14 @@ def load_files(fname):
     return Lyrics_Set, exist, fail, data
 
 
-def save_files(fname,Lyrics_Set, exist, fail):
+def save_files(Lyrics_Set, exist, fail):
     """
     save files
-    :param fname: file name of Lyrics
     :param Lyrics_Set: List of [Song, Artist, Lyrics]
     :param exist: List of Exist Songs
     :param fail: Billboard Weekly Top 100, data scrapped from billboard_scrapping
     """
-    with open(fname, 'wb') as f:
+    with open('Lyrics', 'wb') as f:
         pickle.dump(Lyrics_Set, f)
 
     with open('exist', 'wb') as f:
@@ -220,8 +218,7 @@ def get_song(Song):
 
 if __name__ == "__main__":
     search_url = base_url+"/search?q="
-    fname = 'Lyrics'
-    Lyrics_Set, exist, fail, data = load_files(fname)
+    Lyrics_Set, exist, fail, data = load_files()
 
     for week in data:
         for i in range(1, 101):
@@ -261,7 +258,7 @@ if __name__ == "__main__":
         exist[0] += 1
         print(f'{exist[0]} week finished')
         # save files
-        save_files(fname, Lyrics_Set, exist, fail)
+        save_files(Lyrics_Set, exist, fail)
 
     # Convert Lyrics Set into dictionary
     Lyrics = lyrics_to_dict(Lyrics_Set)
