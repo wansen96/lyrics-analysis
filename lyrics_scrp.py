@@ -7,7 +7,7 @@ import re
 # url
 base_url = "http://api.genius.com"
 # Genius_API_TOKEN: TOKEN authorized and provided by Genius API after signing up
-headers = {'Authorization': 'Bearer Genius_API_TOKEN'}
+headers = {'Authorization': 'Bearer qrcKcZhp5hgKj2a4rR4uzITeaI5GSOFxPe4oZ_EsPbCYijSjOst0z_ABCTPDw2Hp'}
 
 
 def lyrics_to_dict(lyric_lists):
@@ -253,7 +253,7 @@ if __name__ == "__main__":
             else:
                 fail.append(Song)
                 with open('fail_log.txt', 'a') as f:
-                    f.writelines('--------------------------------------------------')
+                    f.writelines('--------------------------------------------------\n')
                     f.writelines('Song Name: '+Song[0]+'\n'+'Artist: '+Song[1]+'\n')
                     f.close()
 
