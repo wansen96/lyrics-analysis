@@ -161,19 +161,19 @@ The remaining functions analyze the data for each specific time period and retur
 * ```count_punctuation(binned=None,dataframe=None,raw_data=None)```
     * Counts the number of characters which are considered punctuation characters in the C locale in the lyrics per time period.
 * ```avg_wrd_len(binned=None,dataframe=None,raw_data=None,unique=True)```
-    * Returns the average word length when considering all the lyrics per time period.
+    * Returns the average word length when considering all the lyrics per time period. Calculation can be done when including either unique or nonunique words.
     
 * ```median_wrd_len(binned=None,dataframe=None,raw_data=None,unique=True)```
-    * Returns the median word length when considering all the lyrics per time period.
+    * Returns the median word length when considering all the lyrics per time period. Calculation can be done when including either unique or nonunique words.
     
 * ```num_unique_words(binned=None,dataframe=None,raw_data=None)```
     * Returns the number of unique words when considering all the lyrics per time period.
 
 * ```variance_words(binned=None,dataframe=None,raw_data=None,unique=True)```
-    * Returns the variance of the word length when considering all the lyrics per time period.
+    * Returns the variance of the word length when considering all the lyrics per time period. Calculation can be done when including either unique or nonunique words.
 
 * ```sort_word_len(num_words=10,binned=None,dataframe=None,raw_data=None,track_words=None,omit_words=["i", "and","she","he","that","this","a","they","you"])```
-    * Finds the top ```num_words``` words with the most occurrences in a time period.
+    * Finds the top ```num_words``` words with the most occurrences in a time period. Specific words can be tracked or omitted when doing the search.
 
 * ```num_song_repeats(num_songs=10,binned=None,dataframe=None,raw_data=None)```
     * Finds the top ```num_songs``` most repeated songs of the time period.
